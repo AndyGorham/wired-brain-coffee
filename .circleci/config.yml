@@ -10,6 +10,9 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Greeting
-          command: bundle -v
-      - ruby/bundle-install
+          name: build dependencies
+          command: bundle install
+      - run:
+          name: build the Jekyll site
+          command: bundle exec jekyll build
+
